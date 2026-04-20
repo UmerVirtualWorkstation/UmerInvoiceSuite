@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="navbar">
+    <span>Welcome, {{ user.full_name }}</span>
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+        <button onclick="window.print()">Print Invoice</button>
+    </div>
+</div>
+
+<h2>Invoice - {{ invoice.invoice_no }}</h2>
+<p><strong>Date:</strong> {{ invoice.date }}</p>
+<p><strong>Customer:</strong> {{ invoice.customer_name }}</p>
+<p><strong>Address:</strong> {{ invoice.customer_address }}</p>
+<p><strong>Phone:</strong> {{ invoice.phone }}</p>
+<p><strong>NTN:</strong> {{ invoice.ntn }}</p>
+<p><strong>GST:</strong> {{ invoice.gst }}</p>
+<p><strong>PO Number:</strong> {{ invoice.po_number }}</p>
+
+<h3>Products</h3>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Qty</th>
+        <th>Unit Cost</th>
+        <th>Total</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.product_name }}</td>
+        <td>{{ product.qty }}</td>
+        <td>{{ product.unit_cost }}</td>
+        <td>{{ product.qty * product.unit_cost }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h3>Total Amount: {{ invoice.total }}</h3>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="navbar">
+    <span>Admin Panel</span>
+    <div>
+        <a href="/admin/export">Export CSV</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<h2>Users</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Reset Password</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.full_name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+            <form method="POST" action="/admin/reset-password/{{ user.id }}">
+                <input type="password" name="password" placeholder="New Password" required>
+                <button type="submit">Reset</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>All Invoices</h2>
+<table>
+    <tr>
+        <th>User</th>
+        <th>Email</th>
+        <th>Invoice No</th>
+        <th>Date</th>
+        <th>PO Number</th>
+        <th>Total</th>
+        <th>Products</th>
+    </tr>
+    {% if invoices %}
+        {% for inv in invoices %}
+        <tr>
+            <td>{{ inv.full_name }}</td>
+            <td>{{ inv.email }}</td>
+            <td>{{ inv.invoice_no }}</td>
+            <td>{{ inv.date }}</td>
+            <td>{{ inv.po_number }}</td>
+            <td>{{ inv.total }}</td>
+            <td>
+                <ul>
+                {% for product in invoice_products[inv.id] %}
+                    <li>{{ product.product_name }} - Qty: {{ product.qty }} - Unit: {{ product.unit_cost }}</li>
+                {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="7">No invoices found.</td>
+        </tr>
+    {% endif %}
+</table>
+{% endblock %}

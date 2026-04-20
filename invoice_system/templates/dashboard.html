@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="navbar">
+    <span>Welcome, {{ user.full_name }}</span>
+    <div>
+        <a href="/invoice/create">Create Invoice</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<h2>My Invoices</h2>
+
+<table>
+    <tr>
+        <th>PO Number</th>
+        <th>Customer Name</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+
+    {% if invoices %}
+        {% for invoice in invoices %}
+        <tr>
+            <td>{{ invoice['po_number'] }}</td>
+            <td>{{ invoice['customer_name'] }}</td>
+            <td>{{ invoice['date'] }}</td>
+            <td>
+                <a href="/invoice/view/{{ invoice['id'] }}">View</a> |
+                <a href="/invoice/edit/{{ invoice['id'] }}">Edit</a> |
+                <a href="/invoice/delete/{{ invoice['id'] }}">Delete</a> |
+                <a href="/invoice/warranty/{{ invoice['id'] }}">Warranty</a>
+            </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="4">No invoices found.</td>
+        </tr>
+    {% endif %}
+</table>
+
+{% endblock %}

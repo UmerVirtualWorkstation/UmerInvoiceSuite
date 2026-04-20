@@ -1,0 +1,165 @@
+/* ===== GLOBAL ===== */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 25px auto;
+    background: #ffffff;
+    padding: 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3 {
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #084298;
+}
+
+/* ===== INPUTS ===== */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 16px 0;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15);
+}
+
+/* ===== TABLES ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: #ffffff;
+}
+
+table, th, td {
+    border: 1px solid #dee2e6;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f1f3f5;
+    font-weight: 600;
+    color: #212529;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: #0d6efd;
+    padding: 14px 22px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.navbar a {
+    color: #ffffff;
+    margin-left: 18px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* ===== SUCCESS NOTIFICATION (GREEN) ===== */
+.flash {
+    background: #e6f9f0;
+    color: #0f5132;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    border-left: 5px solid #198754;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ===== FORMS LAYOUT ===== */
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* ===== INVOICE TOTAL HIGHLIGHT ===== */
+.invoice-total {
+    font-size: 18px;
+    font-weight: 600;
+    color: #198754;
+    text-align: right;
+    margin-top: 15px;
+}
+
+/* ===== FOOTER / SMALL TEXT ===== */
+.small-text {
+    font-size: 12px;
+    color: #6c757d;
+}
