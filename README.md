@@ -1,4 +1,4 @@
-🚀 Invoice Management System (Demo Edition)
+# 🚀 Invoice Management System (Demo Edition)
 
 A robust, Python-powered Invoice Management System engineered to reflect real-world business workflows. This project serves as a demonstration build, showcasing the architecture, design approach, and core capabilities of a scalable invoicing solution.
 
